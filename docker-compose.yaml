@@ -1,0 +1,22 @@
+services:
+  mysql-db:
+    image: mysql:latest
+    deploy:
+      placement:
+        constraints:
+          - node.labels.name==long
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql-backup:/var/lib/mysql
+    networks:
+      my-network:
+      
+volumes:
+  mysql-backup:
+networks:
+  my-network:
+#Hello123
