@@ -1,0 +1,17 @@
+apiVersion: v1 
+kind: ConfigMap
+metadata:
+  name: player-pro-demo
+data:
+  player_live: "5"
+  properties_file_name:  "long1234"
+
+  file: |
+    "abc.txt"
+    "xyz.txt"
+    "aaa.txt"
+  name: |
+    "long"
+    "pham"
+    "1234"
+

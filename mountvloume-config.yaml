@@ -1,0 +1,23 @@
+apiVersion: v1 
+kind: Pod
+metadata:
+  name: mount-volume-example
+spec:
+  containers:
+    - name: mount-volume-example 
+      image: alpine
+      command: ["sleep","3000"]
+      volumeMounts:
+        - name: player-map-example
+          mountPath: /etc/config/configMap
+        - name: secret-demo-example
+          mountPath: /etc/config/secret
+      
+
+  volumes:
+    - name: player-map-example
+      configMap:
+        name: player-pro-demo
+    - name: secret-demo-example
+      secret:
+        secretName: secret-demo
